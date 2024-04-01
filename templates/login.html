@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign up | AIrticle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+    <!-- JQuery import and important scrips-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</head>
+<body>
+    <!-- Display flash messages -->
+    <div class="flash-container"></div>
+
+    <form class="container" id="card">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
+        </div>
+        <h1>Welcome</h1>
+        <p>Log in to continue with AIrticle</p>
+        <input type="email" class="input_email" name="email" placeholder="Email Address" required>
+        <input type="password" class="input_password" name="password" placeholder="Password" required>
+
+        <button type="submit" class='glowing-btn'><span class='glowing-txt'>Co<span class='faulty-letter'>nt</span>i<span class='faulty-letter'>n</span>ue</span></button>
+        <p>Don't have an account? <a href="{{ url_for('signup_page') }}">Sign Up</a></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIrticle | Dashboard </title>
+
+    <!-- My stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generate.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+
+    <!-- Project just needs Font Awesome Free's Solid and Brand files -->
+    <script src="https://kit.fontawesome.com/c2cf2f5d94.js" crossorigin="anonymous"></script>
+
+    <!-- JQuery import and important scripts-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/generate.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gen_functionality.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<nav class="navbar">
+  <h1 class="logo">AIRTICLE</h1>
+  <div class="profile">
+      <div class="dropdown">
+          <!-- Username will go here -->
+          <button id="usernameButton">
+            <!-- <img src="{{ url_for('static', filename='profile-pic.jpg') }}" class="profile-pic"> -->
+          </button>
+          <div class="dropdown-content">
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Updates & FAQs </a>
+              <a ><i class="fa-solid fa-moon"></i> Switch Theme </a>
+              <a href="{{ url_for('auth.login') }}" style="color: red;"><i class="fa-solid fa-power-off"></i> Log out </a>
+          </div>
+      </div>
+  </div>
+</nav>
+
+
+<div class="main-container">
+
+  <!-- LEFT SECTION -->
+  <form class="left_section" id="generate-article-form">
+      <button class="new-chat"> + New Article </button> <p id="flash_container"></p>
+      <h2 id="intro-text"> Where AI meets content ✨ </h2>
+      <div class="article-input">
+
+          <label>What topic is your article about? 🧐</label>
+          <input type="text" name="topic" placeholder="Deserts of South Africa">
+
+          <label>Enter Keywords - <small>Separate with commas ','</small></label> <br/>
+          <input type="text" name="keywords" placeholder="South Africa, deserts, wildlife...">
+
+          <label>How long do you want your article to be? 🙂</label>
+          <select class="aritcle-length" name="article_length">
+            <option value="short">Bite-sized</option>
+            <option value="medium">Detailed</option>
+            <option value="long">Comprehensive</option>
+          </select>
+      </div>
+
+      <button type="submit">GENERATE<i class="fa-solid fa-jet-fighter"></i></button>
+  </form>
+
+  <section class="right_section">
+    <div class="article-display">
+      <div id="load" style="display:none;">
+        <div>G</div>
+        <div>E</div>
+        <div>N</div>
+        <div>E</div>
+        <div>R</div>
+        <div>A</div>
+        <div>T</div>
+        <div>I</div>
+        <div>N</div>
+        <div>G</div>
+      </div>
+      <span id="article-data"></span>
+      <p id="edit_content" contenteditable="true">
+        <!-- Generated Content will display here -->
+      </p>
+    </div>
+    <div class="control_buttons">
+      <button type="button" id="edit_article"><i class="fa-regular fa-pen-to-square"></i> Edit </button>
+      <button type="button" id="save_article"><i class="fa-regular fa-bookmark"></i> Save </button>
+      <button type="button" id="copy_article"><i class="fa-solid fa-clipboard"></i> Copy </button>
+      
+      <!-- Export button and associated dropdown menu -->
+      <div class="export_wrapper">
+          <button type="button" id="export_article"><i class="fa-solid fa-file-export"></i> Export </button>
+          <ul class="format_dropdown">
+              <li><button type="button" id="docx"><i class="fa-solid fa-file-word" style="color: #2B579A;"></i></button></li>
+              <li><button type="button" id="pdf"><i class="fa-solid fa-file-pdf" style="color: #FF0000;"></i></button></li>
+              <li><button type="button" id="md"><i class="fa-brands fa-markdown" style="color: #768390;"></i></button></li>
+              <li><button type="button" id="txt"><i class="fa-solid fa-file-lines" style="color: #141414;"></i></button></li>
+          </ul>
+      </div>
+  </div>
+  </section>
+
+</div>
+
+</body>
+</html>

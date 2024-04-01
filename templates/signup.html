@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up | AIrticle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+
+    <!-- JQuery import and important scrips-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+</head>
+<body>
+    <!-- Display flash messages -->
+    <div class="flash-container"></div>
+
+    <form class="container" id="card">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
+        </div>
+        <h1>Create Your Account</h1>
+        <p>Sign Up to continue with AIrticle</p>
+        <input type="email" class="input_email" name="email" placeholder="Email Address" required>
+        <input type="password" class="input_password" name="password" placeholder="Password" required>
+        <input type="text" class="input_fname" name="firstname" placeholder="Username" required>
+
+        <button type="submit" class='glowing-btn'><span class='glowing-txt'>Co<span class='faulty-letter'>nt</span>i<span class='faulty-letter'>n</span>ue</span></button>
+        <p>Already have an account? <a href="{{ url_for('login_page') }}">Log in</a></p>
+    </form>
+</body>
+</html>

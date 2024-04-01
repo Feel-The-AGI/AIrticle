@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #222222; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% of the viewport height */
+    background-color: #f8f9fa; /* Any background color you like */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; /* Max width of the container */
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initial state for the appear animation */
+  transform: translateX(-100%); /* Initial state for the slideInFromLeft animation */
+  animation: appear 0.5s ease forwards 0.2s, slideInFromLeft 0.5s ease-out forwards;
+}
+
+@keyframes appear {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+/* H1 AND P TAGS */
+h1, p {
+    color: #FFFFFF;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+}
+
+
+/* General input field styles */
+.input_email, .input_password, .input_fname, .input_lname {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin: 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Animation and style when input is focused */
+.input_email:focus, .input_password:focus, .input_fname:focus, .input_lname:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0,123,255, 0.5);
+}
+
+/* Placeholder moving up */
+.input_email::placeholder, .input_password::placeholder, .input_fname::placeholder, .input_lname::placeholder {
+    transition: all 0.3s ease-in-out;
+}
+
+.input_email:focus::placeholder, .input_password:focus::placeholder, .input_fname:focus::placeholder, .input_lname:focus::placeholder {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+/* Filled input */
+.input_email:valid, .input_password:valid, .input_fname:valid, .input_lname:valid {
+    border-color: #28a745;
+}
+
+/* BUTTON */
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+:root {
+  --glow-color: hsl(186 100% 69%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #232829, #2193b0);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glowing-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: 0.5em;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+.faulty-letter {
+  opacity: 0.5;
+  animation: faulty-flicker 2s linear infinite;
+}
+
+.glowing-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  background: var(--glow-color);
+  pointer-events: none;
+}
+
+.glowing-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.glowing-btn:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-btn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-btn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .glowing-btn{
+    font-size: 1em;
+  }
+}
+
+/* ============================================================ */
+/* FLASH MESSAGE */
+.flash-container {
+  width: auto; /* Adjusts the width based on content */
+  max-width: 80%; /* Ensures it doesn't take the entire width */
+  text-align: center;
+  padding: 10px 20px; /* Added horizontal padding for better aesthetics */
+  margin: 20px; /* Margin from the top-left of the screen */
+  position: fixed; /* Makes the flash messages appear at the top */
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Ensures it's above other content */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  color: aqua; /* Neon aqua text color */
+  font-weight: bold;
+  border-radius: 5px;
+
+  /* Neon glow effect */
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.9); /* Aqua glow around the container */
+}
+
+
+
+
+/* Responsive Small */
+@media only screen and (max-width: 600px) {
+  .container {
+      width: 90%;
+      left: 5%; /* Center the container */
+      top: 10%;
+      height: auto; /* Adjust height automatically */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .input_email, .input_password, .input_fname, .input_lname {
+      padding: 12px; /* Slightly smaller padding */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h1, p {
+      font-size: smaller; /* Adjust as needed */
+  }
+}

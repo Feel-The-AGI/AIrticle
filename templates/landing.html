@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+        <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+        
+        <!-- FontAwesome Icon Library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+        <!-- AOS Library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-Ho8AyLOo5gDRvRptxGKjaJl8qp1JsDA4lzoSXv6/1L0I3wRvTqGwPdUeN1kXpmo8/DlOeQoJrYpVqw2VH2U0HQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>AIrticle</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <span>A</span><span>I</span><span>r</span><span>t</span><span>i</span><span>c</span><span>l</span><span>e</span> <small class="beta">ALPHA</small>
+                </div>
+                <!-- Hamburger Icon -->
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to <i class="gradient-text">{AIrticle}</i></h1>
+                <p>Your AI-Powered Article Co-Pilot</p>
+                <p>Designed for content creators, bloggers, and writers</p>
+                <div class="cta">
+                    <a href="{{ url_for('signup_page') }}" class="btn">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <div class="feature-container">
+                <div id="feature-one">
+                    <div class="f-one">
+                        <h3>Intuitive AI Writing</h3>
+                        <p>Generate articles with cutting-edge AI technology.</p>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/DALL·E-hero.png') }}" alt="A robot writing with a feather" height="300px" width="500px" />
+                </div>
+
+                <div id="feature-two">
+                    <img src="{{ url_for('static', filename='images/customize.png') }}" alt="A robot holding a pen" height="300px" width="500px" />
+                    <div class="f-two">
+                        <h3>Customization</h3>
+                        <p>Edit and personalize your AI-generated content easily.</p>
+                    </div>
+                </div>
+
+                <div id="feature-three">
+                    <h3>Export & Save</h3>
+                    <p>Export your articles in various formats and save your work effortlessly.</p>
+                    <img src="{{ url_for('static', filename='images/export2.png') }}" alt="Export as TXT image" height="300px" width="500px" />
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About The AIrticle</h2>
+            <p>AIrticle is your go-to tool for creating engaging, high-quality content with the help of AI. Our mission is to make content creation easier and more accessible for everyone.</p>
+        </section>
+
+        <section id="contact" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to get in touch? Our team is ready to assist you.</p>
+            <div class="contact-details">
+                <a href="mailto:theairticle@gmail.com" class="contact-button">
+                    <i class="fa-solid fa-envelope"></i> Email us
+                </a>
+                <a href="https://www.linkedin.com/in/jason-quist-4a0651261/" target="_blank" rel="noopener noreferrer" class="contact-button">
+                    <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                </a>
+                <a href="https://wa.me/+233532419012" target="_blank" rel="noopener noreferrer" class="contact-button">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-title">What is TheAIrticle?</div>
+                    <div class="faq-content">
+                        <p>TheAIrticle is an AI-powered article generator that allows users to input a topic, keywords, and desired length to automatically generate articles.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-title">How can I customize the generated content?</div>
+                    <div class="faq-content">
+                        <p>Users can easily customize the AI-generated content by using the provided editing tools. You can edit, format, and make changes to the generated articles as per your requirements.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-title">What formats can I export my articles in?</div>
+                    <div class="faq-content">
+                        <p>TheAIrticle supports multiple export formats, including DOCX, PDF, Markdown (MD), and plain text (TXT). You can choose the format that suits your needs when saving your finalized articles.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-title">Is there a user authentication system?</div>
+                    <div class="faq-content">
+                        <p>Yes, TheAIrticle provides a user authentication system. Users can sign up and log in using a simple email and password-based authentication process, which ensures data security and personalized access to their content.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-title">Where can I access my saved articles?</div>
+                    <div class="faq-content">
+                        <p>You can access your saved articles through the user dashboard. The dashboard allows you to view and manage your saved content and initiate new content generation requests easily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 TheAIrticle. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+        </footer>
+
+
+
+        <!-- Initialize AOS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-3hqd6U6VyD5Kx6q8xTtG5ntWHwL7RM3xjo4YI3fwJNFN+M6/hyDOkKvu7ef1r8Zj3RBO1Kq3yMN5VbQ4Y6uhRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        // Wait for the DOM to load
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+    
+            // Toggle the 'active' class on the '.nav-links' when the toggle button is clicked
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+    </body>
+</html>

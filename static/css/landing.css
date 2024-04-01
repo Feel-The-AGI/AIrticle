@@ -1,0 +1,585 @@
+/* =================================== Scroll Bar Start =================================== */
+/* Style the scrollbar - works for Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background: #35a79c;
+    border-radius: 10px; /* Increase border-radius for rounded top and bottom */
+}
+
+/* Handle of the scrollbar on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #1f7a6d;
+}
+
+/* Track of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px; /* Optionally round the track as well */
+    box-shadow: inset 0 0 5px grey;
+}
+
+/* Style for Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #35a79c #f1f1f1;
+}
+/* =================================== Scroll Bar End =================================== */
+
+
+
+
+/* Basic Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Green color for the button */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #45a049; /* Darker shade of green on hover */
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+    background-color: teal; /* Adjust to your brand color */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffd700; /* Gold color on hover */
+    transition: color 0.3s;
+}
+
+
+
+/* ============================ LOGO ANNIMATION & BETA TEXT ============================ */
+.navbar .logo {
+    font-size: 1.5em;
+}
+
+/* Logo Animation */
+@keyframes glowing {
+    0%, 100% {
+        color: #fff;
+        filter: blur(2px);
+        text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff, 0 0 300px #00b3ff, 0 0 400px #00b3ff;
+    }
+    5%, 95% {
+        color: #111;
+        filter: blur(0px);
+        text-shadow: none;
+    }
+}
+
+.logo span {
+    font-family: 'Arial', sans-serif;
+    animation: glowing 2s linear infinite;
+}
+
+.logo span:nth-child(1) { animation-delay: 0s; }
+.logo span:nth-child(2) { animation-delay: .25s; }
+.logo span:nth-child(3) { animation-delay: .5s; }
+.logo span:nth-child(4) { animation-delay: .75s; }
+.logo span:nth-child(5) { animation-delay: 1s; }
+.logo span:nth-child(6) { animation-delay: 1.25s; }
+.logo span:nth-child(7) { animation-delay: 1.5s; }
+.logo span:nth-child(8) { animation-delay: 1.75s; }
+
+.navbar .logo .beta {
+    display: inline-block;
+    margin-left: 10px;
+    color: #080808; /* Adjust text color as needed */
+    background-color: #00ffc8; /* Background color of the badge */
+    font-size: 0.5em;
+    text-transform: uppercase;
+    padding: 3px 6px; /* Padding inside the badge */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(116, 95, 95, 0.3); /* Subtle shadow for depth */
+    border: 0.5px solid #ffffff; /* White border for contrast */
+}
+/* ============================ END LOGO ANNIMATION & BETA TEXT ============================ */
+
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('path_to_your_hero_image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 4em 0;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid transparent; /* Simulates the cursor */
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+}
+.gradient-text {
+    background: linear-gradient(45deg, #1f7a6d, #35a79c);
+    -webkit-background-clip: text;
+    color: transparent; /* Hide the text color, show the background */
+    display: inline; /* Keep inline styling */
+}
+
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+/* =========================== HERO ANNIMATION =========================== */
+/* Typewriter typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Cursor animations */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* H1 Responsiveness */
+@media only screen and (max-width: 250px) {
+    .hero-title {
+        font-size: 1.5em; /* smaller font size */
+    }
+}
+/* =========================== HERO ANNIMATION END =========================== */
+
+/* Features Section */
+#features {
+    padding: 2em 0;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+    padding: 1em;
+}
+
+.feature-container div {
+    background: white;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.feature-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* FEATURES ANNIMATION */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-container div {
+    opacity: 0;
+    animation: fadeInSlideUp 1s ease-out forwards;
+    animation-delay: calc(var(--animation-order) * 0.2s);
+}
+
+.feature-container div[id=feature-one] { --animation-order: 1; }
+.feature-container div[id=feature-two] { --animation-order: 2; }
+.feature-container div[id=feature-three] { --animation-order: 3; }
+/* ================================ FEATRES ANNIMATION END ================================  */
+
+
+/* ================================  About Section ================================  */
+#about {
+    background-color: #fff; /* Light background for readability */
+    padding: 4em 0; /* Ample padding for a spacious layout */
+    text-align: center; /* Centered text for focus */
+    color: #333; /* Dark text for contrast and readability */
+}
+
+#about h2 {
+    font-size: 2.5em; /* Large font size for the heading */
+    color: #4CAF50; /* Color to match your branding */
+    margin-bottom: 0.5em; /* Space below the heading */
+}
+
+#about p {
+    max-width: 600px; /* Restrict paragraph width for easier reading */
+    margin: auto; /* Center the paragraph */
+    font-size: 1.2em; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Line height for better text flow */
+}
+
+/* Responsive Design for About Section */
+@media screen and (max-width: 768px) {
+    #about {
+        padding: 2em 0; /* Lesser padding on smaller screens */
+    }
+
+    #about p {
+        padding: 0 1em; /* Padding on the sides for mobile readability */
+    }
+}
+/* ================================  ABOUT ANNIMATION END ================================  */
+
+/* Contact Us Section */
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Keyframes for slide-up effect */
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Contact Us Section Start */
+
+/* Contact section animation */
+#contact {
+    background-color: #fff; /* Change this to match your color scheme */
+    padding: 4em 0;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out, slideUp 0.5s ease-in-out;
+    animation-fill-mode: forwards; /* Keeps the element in the final state of the animation */
+    opacity: 0; /* Start with the section hidden */
+}
+
+/* Contact details styling */
+.contact-details {
+    margin-top: 2em;
+}
+
+.contact-details a {
+    font-size: 1.2em;
+    color: teal; /* Adjust to match your brand color */
+    text-decoration: none; /* Removes underline from links */
+    transition: color 0.3s ease-in-out;
+    padding: 15px;
+}
+
+.contact-details a:hover,
+.contact-details a:focus { /* Adds a hover and focus state for accessibility */
+    color: #35a79c; /* A slightly different shade for hover state */
+    text-decoration: underline; /* Adds underline on hover for clarity */
+}
+
+/* Icon styling within links */
+.contact-details i {
+    margin-right: 8px; /* Space out the icon from the text */
+    color: #4CAF50; /* Icon color can match your brand color */
+}
+
+/* Adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+    .contact-details a {
+        font-size: 1em; /* Slightly smaller font size on mobile */
+    }
+}
+/* Responsive styles for screens with a max-width of 250px */
+@media only screen and (max-width: 250px) {
+    #contact h2 {
+        font-size: 1.2em; /* Smaller heading */
+    }
+
+    #contact p {
+        font-size: 0.9em; /* Smaller paragraph text */
+    }
+
+    .contact-button {
+        display: block; /* Stack buttons vertically */
+        width: 100%; /* Full width for buttons */
+        margin: 0.5em 0; /* Adjust margins for vertical stacking */
+        padding: 0.5em; /* Adjust padding */
+    }
+}
+/* Contact Us Section End */
+
+
+
+
+/* FAQ Section */
+.faq-section {
+    background-color: #fff;
+    padding: 2em 0;
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.faq-container {
+    width: 800px;
+    margin: auto;
+    text-align: left;
+    margin: auto;
+}
+
+.faq-item {
+    background: #f4f4f4;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 800px;
+}
+
+.faq-title {
+    padding: 0.5em 1em;
+    background: teal;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Added hover effect for the title */
+.faq-title:hover {
+    background-color: #35a79c;
+}
+
+.faq-content {
+    /* Set max-width here if your .faq-item has a set width to ensure it does not expand beyond it */
+    max-width: 800px; /* Adjust this to the width of your .faq-item if it's different */
+    margin: auto; /* This will center the content if .faq-content is smaller than the max-width */
+    padding: 0 1em;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    /* Add box-sizing property to include padding in the element's total width */
+    box-sizing: border-box;
+}
+
+.faq-content.open {
+    padding: 1em; /* Padding when open */
+    max-height: 1000px; /* Max height for visible content, adjust as needed */
+    visibility: visible; /* Make content visible */
+    opacity: 1; /* Fade in content */
+    max-width: 800px;
+}
+/* Responsive Design for FAQ Section */
+@media screen and (max-width: 768px) {
+    .faq-container {
+        width: 100%;
+        padding: 0 20px; /* Padding for smaller screens */
+    }
+
+    .faq-item {
+        /* Ensures the content is easily readable on smaller screens */
+        margin-bottom: 0.5em;
+    }
+
+    .faq-title {
+        /* Adjusts the padding for better touch targets on smaller screens */
+        padding: 0.75em 1em;
+    }
+
+    .faq-content {
+        /* Adjusts the padding for consistency on smaller screens */
+        padding: 0.5em 1em;
+    }
+}
+/* Responsive styles for screens with a max-width of 250px */
+@media only screen and (max-width: 250px) {
+    .faq-section {
+        display: block;
+    }
+    .faq-section h2 {
+        font-size: 1em; /* Slightly smaller */
+    }
+
+    .faq-item {
+        margin-bottom: 0.5em; /* Less space between items */
+    }
+
+    .faq-title, .faq-content p {
+        font-size: 0.9em; /* Smaller text */
+    }
+}
+/* FAQ End */
+
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* FOOTER ANNIMATION */
+footer a:hover {
+    color: #ffd700; /* Gold color on hover */
+    transition: color 0.3s;
+}
+/* FOOTER ANNIMATION END */
+
+
+
+
+
+
+
+
+
+/* Media Queries for Responsiveness  needs to be chencked as well as the script in the html*/
+@media screen and (max-width: 768px) {
+    .navbar .nav-links {
+        position: absolute;
+        background-color: teal;
+        right: 0;
+        left: 0;
+        top: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Start with the menu hidden */
+    }
+
+    .navbar .nav-links.active { /* This class will be toggled via JS */
+        display: flex; /* Display the menu when the toggle button is clicked */
+    }
+
+    .navbar .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .navbar .nav-links a {
+        font-size: 1rem;
+    }
+
+    .nav-toggle {
+        display: block; /* Show the toggle button on smaller screens */
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+    }
+
+    .hamburger {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 5px auto;
+        transition: all 0.3s linear;
+    }
+}
+.nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 1; /* Ensure the button is clickable over other elements */
+}
+
+/* .hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    background-color: white;
+    height: 2px;
+    width: 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(6px);
+} */

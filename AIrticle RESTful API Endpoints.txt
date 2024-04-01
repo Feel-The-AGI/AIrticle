@@ -1,0 +1,35 @@
+Auth & User
+/signup - ['GET', 'POST']
+/login - ['GET', 'POST']
+/logout - ['POST'] (usually, logging out is a POST operation)
+/update_username - ['PUT']
+/update_password - ['PUT']
+/username - ['GET']
+/user_info - ['GET'] (To provide additional user info if needed)
+
+
+Content Generation
+/generate - ['POST']
+
+
+Article Management
+/view_articles - ['GET']
+/edit_article/<article_id> - ['GET', 'PUT'] (use article_id as a parameter)
+/new_article - ['POST'] (To save a new article, similar to save but initializes a new article)
+/save_article - ['POST', 'PUT'] (Could also allow PUT for updates)
+/delete_article/<article_id> - ['DELETE'] (To delete an article)
+
+
+Article Export
+/export/<article_id> - ['POST'] (use article_id as a parameter)
+
+
+AutoSave
+/auto_save - ['POST']
+
+
+Extra Features
+/search_articles - ['GET'] (To allow users to search their saved articles)
+/forgot_password - ['POST', 'PUT'] (In case user forgets the password)
+/activate_account - ['GET'] (If you want to include email-based account activation)
+
